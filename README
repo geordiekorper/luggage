@@ -1,3 +1,7 @@
+***Warning*** 
+This version differs significantly from the canonical unixorn Luggage version.
+See CHANGES file for more information.
+
 The Luggage is a project to create a wrapper to make Apple PKG format
 packages.
 
@@ -11,3 +15,5 @@ of your Makefile. No more wading through a zillion annoying GUI panes.
 Full documentation can be found at http://wiki.github.com/unixorn/luggage/
 
 Example packages can be found at https://github.com/unixorn/luggage-examples
+
+ 

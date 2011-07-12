@@ -19,7 +19,7 @@ include luggage.make
 
 TITLE=luggage
 REVERSE_DOMAIN=net.apesseekingknowledge
-PAYLOAD=pack-luggage.make pack-prototype.plist \
+PAYLOAD=pack-luggage.make pack-prototype.plist pack-prototype_mpkg.info \
 	pack-usr-local-bin-app2luggage.rb
 
 help:
@@ -37,6 +37,9 @@ l_usr_local_share_luggage: l_usr_local_share
 pack-prototype.plist: l_usr_local_share_luggage
 	@sudo ${INSTALL} -m 644 -o root -g wheel prototype.plist ${WORK_D}/usr/local/share/luggage/prototype.plist
 
+pack-prototype_mpkg.info: l_usr_local_share_luggage
+	@sudo ${INSTALL} -m 644 -o root -g wheel prototype_mpkg.info ${WORK_D}/usr/local/share/luggage/prototype_mpkg.info
+
 pack-luggage.make: l_usr_local_share_luggage
 	@sudo ${INSTALL} -m 644 -o root -g wheel luggage.make ${WORK_D}/usr/local/share/luggage/luggage.make
 
@@ -44,6 +47,7 @@ pack-luggage.make: l_usr_local_share_luggage
 bootstrap_files: bootstrap_directory
 	@sudo ${INSTALL} -m 644 -o root -g wheel luggage.make /usr/local/share/luggage/luggage.make
 	@sudo ${INSTALL} -m 644 -o root -g wheel prototype.plist /usr/local/share/luggage/prototype.plist
+	@sudo ${INSTALL} -m 644 -o root -g wheel prototype_mpkg.info /usr/local/share/luggage/prototype_mpkg.info
 	@sudo ${INSTALL} -m 755 -o root -g wheel app2luggage.rb /usr/local/bin/app2luggage.rb
 
 bootstrap_directory:

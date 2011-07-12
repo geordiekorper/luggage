@@ -1,0 +1,18 @@
+Version 1.0.1
+    This version differs significantly from the canonical unixorn Luggage version.
+    It has been modified to use JITSQ (Just In TIme Shell Quoting) and will behave
+    differently when using variables and file names that have spaces in their names.
+    The canonical version required backslashes to escape characters at the time they
+    were declared. When compiled with this version, Makefiles that were using
+    backslashes to escape characters will have those backslashes now appear as
+    litteral characters. As of 2011-07-08 these changes have only been tested on a
+    limited number of Makefiles.
+    
+    Makefiles can now be named whatever you want and call other Makefiles in
+    another folder.
+    
+    Metapackage (.mpkg) support added. This is very primitive and uses the
+    deprecated format for simplicity. Subpackages are assumed to be in
+    sub-folders below the directory with the mpkg Makefile.
+   
+   

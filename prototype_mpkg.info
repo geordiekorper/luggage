@@ -1,0 +1,24 @@
+###  metapackage.info file used for bundle metapackages
+# the name to display in Installer.app
+Title {TITLE}
+# This will indicate that the packages are in the .mpkg directory itself
+PackageLocation ./Contents/Packages/
+# Setting this to YES will cause failures not to show and checks to be skipped.  Just leave it as NO
+FastInstall NO
+# Version of the installer
+Version {PACKAGE_VERSION}
+# Description of the installer
+Description {DESCRIPTION}
+# Default location
+DefaultLocation /
+# Diskname (null)
+# DeleteWarning
+NeedsAuthorization YES
+# DisableStop NO
+# UseUserMask NO
+# Application NO
+Relocatable NO
+# Required NO
+# InstallOnly NO
+RequiresReboot NO
+# InstallFat NO
