@@ -13,6 +13,11 @@ Version 1.0.1
     
     Metapackage (.mpkg) support added. This is very primitive and uses the
     deprecated format for simplicity. Subpackages are assumed to be in
-    sub-folders below the directory with the mpkg Makefile.
+    sub-folders below the directory with the mpkg Makefile. Just "make mkg"
+    to make a metapackage. The syntax in the Makefile is 
+    mpack-[selected,unselected,required]-subfolder. The Makefile in the
+    sub-folders will be run and then the resulting pkgs will be copied into
+    the metapackage.
+    
    
    

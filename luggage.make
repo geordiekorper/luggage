@@ -145,6 +145,7 @@ help:
 	@-echo "make clean - clean up work files."
 	@-echo "make dmg - roll a pkg, then stuff it into a dmg file."
 	@-echo "make zip - roll a pkg, then stuff it into a zip file."
+	@-echo "make mpkg - roll a bunch of pkgs, then stuff them in an mpkg."	
 	@-echo "make pkg - roll a pkg."
 	@-echo
 
@@ -596,7 +597,7 @@ luggage.mpkg.info: ${METAPACKAGE_BUNDLE}
 mpack-%: %
 	@echo
 	@echo Making subpackage "$<"
-	@$(MAKE) -C "$<" pkg
+	@$(MAKE) -C $< pkg
 	@${CP} -pR $</*.pkg "${METAPACKAGE_PACKAGES_DIR}"
 
 mpack-unselected-%: % mpack-%
@@ -698,4 +699,6 @@ copydir=@\
 REMOVE_FILETYPE=sudo ${XATTR} -d "com.apple.FinderInfo"   "$(1)" 2> /dev/null || NOP=42
 REMOVE_RESOURCE=sudo ${XATTR} -d "com.apple.ResourceFork" "$(1)" 2> /dev/null || NOP=42
 REMOVE_ENCODING=sudo ${XATTR} -d "com.apple.TextEncoding" "$(1)" 2> /dev/null || NOP=42
-remove_all_xattrs
+
+#remove_all_xattrs
+
